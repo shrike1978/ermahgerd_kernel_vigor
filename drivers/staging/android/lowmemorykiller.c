@@ -75,7 +75,7 @@ static size_t lowmem_minfile[6] = {
 static int lowmem_minfile_size = 6;
 
 static unsigned long lowmem_deathpending_timeout;
-extern int compact_nodes(void);
+extern int compact_nodes(int);
 static uint32_t lowmem_check_filepages = 0;
 
 #define lowmem_print(level, x...)			\
@@ -226,7 +226,7 @@ static int lowmem_shrink(struct shrinker *s, struct shrink_control *sc)
 		     sc->nr_to_scan, sc->gfp_mask, rem);
 	rcu_read_unlock();
 	if (selected)
-		compact_nodes();
+		compact_nodes(false);
 	return rem;
 }
 
