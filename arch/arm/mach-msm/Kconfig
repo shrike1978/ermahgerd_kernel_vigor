@@ -1557,11 +1557,11 @@ config MSM_MPDEC_DISABLED
       Build MPdecision into kernel with only control over
       screen on/off multi processor decisions by default.
 
+endchoice
+
 config CPU_VOLTAGE_TABLE
   	bool "Enable CPU Voltage Table via sysfs for adjustements"
   	default n
-
-endchoice
 
 if CPU_FREQ_MSM
 
