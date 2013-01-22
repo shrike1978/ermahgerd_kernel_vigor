@@ -121,6 +121,12 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
 	help
 	   Use the CPU governor 'intellidemand' as default.
 
+config CPU_FREQ_DEFAULT_GOV_WHEATLEY
+	bool "wheatley"
+	select CPU_FREQ_GOV_WHEATLEY
+	help
+	   Use the CPU governor 'wheatley' as default.
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -237,6 +243,14 @@ config CPU_FREQ_GOV_INTELLIDEMAND
 	depends on CPU_FREQ
 	help
 	   Use the CPU governor 'intellidemand'.
+
+	   If in doubt, say N.
+
+config CPU_FREQ_GOV_WHEATLEY
+	tristate "'wheatley' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	   Use the CPU governor 'wheatley'.
 
 	   If in doubt, say N.
 
