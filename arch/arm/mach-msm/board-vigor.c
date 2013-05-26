@@ -7539,10 +7539,9 @@ static struct platform_device *vigor_devices[] __initdata = {
 	&asoc_mvs_dai1,
 #endif
 
-#if defined(CONFIG_USB_GADGET_MSM_72K) || defined(CONFIG_USB_EHCI_HCD)
 	&msm_device_hsusb_host,
 	&msm_device_otg,
-#endif
+	
 #ifdef CONFIG_BATTERY_MSM
 	&msm_batt_device,
 #endif
